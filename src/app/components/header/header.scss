@@ -1,0 +1,90 @@
+.link {
+    cursor: pointer;
+}
+
+mat-grid-list {
+    color: #fff;
+    background-color: #099;
+    font-size: 4em;
+}
+
+mat-grid-tile mat-icon {
+    font-size: 1em;
+    line-height: 1em;
+    width: 1em;
+    height: 1em;
+}
+
+mat-grid-tile ol {
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+mat-grid-tile ol li {
+    float: left;
+}
+
+mat-grid-tile ol.text-link li {
+    padding: 0 0.4em;
+    font-size: 0.45em;
+}
+
+mat-grid-tile ol.text-link mat-icon {
+    padding: 0 0.2em;
+    font-size: 1.2em;
+}
+
+mat-grid-tile ol.text-header li {
+    padding: 0 0.4em;
+    font-size: 0.5em;
+}
+
+mat-grid-tile ol.icon li {
+    padding: 0 0.2em;
+    color: #fff;
+    font-size: 0.8em;
+    height: 0.8em;
+    width: 0.8em;
+    line-height: 0.8em;
+}
+
+mat-grid-tile ol li a {
+    color: #fff;
+}
+
+mat-grid-tile ol.text-header li h2 {
+    font-size: 1.5em;
+}
+
+mat-grid-tile ol.multiple-column {
+    margin-top: 1.5em;
+}
+mat-grid-tile ol.multiple-column li:nth-child(even) h2::before,
+mat-grid-tile ol.multiple-column li:nth-child(even) h2::after {
+    padding: 0;
+    content: '|';
+}
+mat-grid-tile ol.multiple-column li:nth-child(even) h2::before {
+    padding-right: 0.5em;
+}
+mat-grid-tile ol.multiple-column li:nth-child(even) h2::after {
+    padding-left: 0.5em;
+}
+
+mat-grid-tile ol.single-column li {
+    width: 100%;
+    text-align: center;
+}
+mat-grid-tile ol.single-column h2::before,
+mat-grid-tile ol.single-column h2::after {
+    padding: 0;
+    content: '|';
+}
+mat-grid-tile ol.single-column h2::before {
+    padding-right: 0.5em;
+}
+mat-grid-tile ol.single-column h2::after {
+    padding-left: 0.5em;
+}
