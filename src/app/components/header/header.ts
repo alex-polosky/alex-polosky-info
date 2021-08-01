@@ -1,4 +1,3 @@
-import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, ElementRef, Input, TemplateRef, ViewChild } from '@angular/core';
 
 import { DomSanitizer } from '@angular/platform-browser';
@@ -25,8 +24,8 @@ export interface Cell {
 })
 export class AppHeaderComponent {
     @Input() pageLinks: PageLink[] = [];
+    @Input() singleColumn: boolean = false;
 
-    singleColumn: boolean = false;
     colsWide = 5;
     colsNarrow = 1;
 
@@ -112,7 +111,6 @@ export class AppHeaderComponent {
 
     constructor(
         private matIconRegistry: MatIconRegistry,
-        breakpointObserver: BreakpointObserver,
         domSanitizer: DomSanitizer
     ) {
         this.matIconRegistry.addSvgIcon(
@@ -132,17 +130,7 @@ export class AppHeaderComponent {
             domSanitizer.bypassSecurityTrustResourceUrl('../assets/yt.svg')
         );
 
-        breakpointObserver
-            .observe(['(min-width: 971px)'])
-            .subscribe((state: BreakpointState) => {
-                if (state.matches) {
-                    this.singleColumn = false;
-                }
-                else {
-                    this.singleColumn = true;
-                }
-            });
-
-        (window as any).headervm = this;
+        // TODO: Remove after debugging
+        (window as any).vmheader = this;
     }
 }

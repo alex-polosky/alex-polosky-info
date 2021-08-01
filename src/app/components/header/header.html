@@ -3,7 +3,8 @@
         <ng-container *ngIf="cols > 1 || cell.template != null"><!-- this was originally for empty pad cells; they've been removed, but it's still an option -->
             <mat-grid-tile
                 [colspan]="singleColumn ? 1 : cell.cols"
-                [rowspan]="cell.rows">
+                [rowspan]="cell.rows"
+            >
                 <ng-component *ngTemplateOutlet="cell.template; context: { pages: cell.pages ?? [] }"></ng-component>
             </mat-grid-tile>
         </ng-container>
@@ -13,32 +14,38 @@
 <ng-template #template_title>
     <mat-icon title="AJP" svgIcon="ajp" inline="true"></mat-icon>&nbsp;Alex Polosky
 </ng-template>
+
 <ng-template #template_links let-pages="pages">
     <ol class="text-link">
         <li *ngFor="let link of pages">
             <ng-container *ngIf="isInternalLink(link.link)">
                 <div
                     class="link"
-                    (click)="pageClick(link.link)">
+                    (click)="pageClick(link.link)"
+                >
                     <ng-component *ngTemplateOutlet="template_iconLink; context: { icon: link.icon, title: link.title}"></ng-component>
                 </div>
             </ng-container>
+
             <ng-container *ngIf="isInternalLink(link.link) === false">
                 <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    [href]="link.link">
+                    [href]="link.link"
+                >
                     <ng-component *ngTemplateOutlet="template_iconLink; context: { icon: link.icon, title: link.title}"></ng-component>
                 </a>
             </ng-container>
         </li>
     </ol>
 </ng-template>
+
 <ng-template #template_iconLink let-icon="icon" let-title="title">
     <span
         *ngIf="icon == null"
         [innerText]="title">
     </span>
+
     <mat-icon
         *ngIf="icon != null"
         [title]='title'
@@ -46,6 +53,7 @@
         [inline]=true>
     </mat-icon>
 </ng-template>
+
 <ng-template #template_headline let-pages="pages">
     <ol [class]="['text-header', singleColumn ? 'single-column' : 'multiple-column']">
         <li *ngFor="let tag of pages">

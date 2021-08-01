@@ -1,4 +1,5 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { Component, ElementRef, Output, ViewChild } from '@angular/core';
 
 export interface PageLink {
     title: string;
@@ -11,6 +12,8 @@ export interface PageLink {
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+    singleColumn: boolean = false;
+
     @ViewChild('pageLink_whoami') pageLink_whoami: ElementRef | null = null;
     @ViewChild('pageLink_projects') pageLink_projects: ElementRef | null = null;
     @ViewChild('pageLink_skills') pageLink_skills: ElementRef | null = null;
@@ -37,7 +40,22 @@ export class AppComponent {
         ]
     }
 
-    constructor() {
-        (window as any).appvm = this;
+    constructor(
+        breakpointObserver: BreakpointObserver
+    ) {
+
+        breakpointObserver
+            .observe(['(min-width: 971px)'])
+            .subscribe((state: BreakpointState) => {
+                if (state.matches) {
+                    this.singleColumn = false;
+                }
+                else {
+                    this.singleColumn = true;
+                }
+            });
+
+        // TODO: Remove after debugging
+        (window as any).vmapp = this;
     }
 }

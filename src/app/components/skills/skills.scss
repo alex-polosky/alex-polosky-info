@@ -1,0 +1,32 @@
+.app-container {
+    margin: 0 auto;
+    height: 45em;
+}
+
+.table-container {
+    height: 37em;
+    overflow-y: scroll;
+}
+
+.app-container.single-column {
+    width: 85%;
+}
+
+.app-container.multiple-column {
+    width: 70%;
+}
+
+.table-footer {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(0, 0, 0, 0.12);
+    height: 8em;
+}
+
+.table-footer-text {
+    padding: 1em;
+}
+
+table {
+    width: 100%;
+}
