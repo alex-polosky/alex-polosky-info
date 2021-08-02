@@ -1,6 +1,6 @@
 .app-container {
     margin: 0 auto;
-    height: 45em;
+    height: 50em;
 }
 
 .table-container {
@@ -16,6 +16,17 @@
     width: 70%;
 }
 
+.table-filter {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.12);
+    height: 4em;
+    padding: 0 4em;
+}
+.table-filter .mat-form-field {
+    width: 100%;
+}
+
 .table-footer {
     border-top-width: 1px;
     border-top-style: solid;
@@ -29,4 +40,14 @@
 
 table {
     width: 100%;
+}
+
+.td-icon {
+    line-height: 3em;
+    height: 3em;
+}
+.td-icon mat-icon {
+    padding-top: 1em;
+    line-height: 3em;
+    height: 3em;
 }

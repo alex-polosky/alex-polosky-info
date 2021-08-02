@@ -1,7 +1,9 @@
 import { Component, Input, ViewChild } from '@angular/core';
 
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 interface Skill {
     type: string;
@@ -11,6 +13,17 @@ interface Skill {
 
 const DATA: Skill[] = [
     { type: '', name: '', level: 0 },
+
+    // { type: 'REMOVE', name: 'A', level: 1 },
+    // { type: 'REMOVE', name: 'B', level: 2 },
+    // { type: 'REMOVE', name: 'C', level: 3 },
+    // { type: 'REMOVE', name: 'D', level: 4 },
+    // { type: 'REMOVE', name: 'E', level: 5 },
+    // { type: 'REMOVE', name: 'F', level: 6 },
+    // { type: 'REMOVE', name: 'G', level: 7 },
+    // { type: 'REMOVE', name: 'H', level: 8 },
+    // { type: 'REMOVE', name: 'I', level: 9 },
+    // { type: 'REMOVE', name: 'J', level: 10 },
 
     { type: 'Concept', name: '', level: 0 },
     { type: 'Concept', name: 'Blockchain', level: 3 },
@@ -125,17 +138,32 @@ export class AppSkillsComponent {
         'type', 'name', 'level'
     ];
 
-    constructor() {
+    constructor(
+        private matIconRegistry: MatIconRegistry,
+        domSanitizer: DomSanitizer
+    ) {
+        for (let i = 0; i < 10; i++) {
+            this.matIconRegistry.addSvgIcon(
+                `level${i}`,
+                domSanitizer.bypassSecurityTrustResourceUrl(`../assets/level/${i}.svg`)
+            );
+        }
+
         // TODO: Remove after debugging
         (window as any).vmskills = this;
     }
 
-    ngAfterViewInit() {
+    ngAfterViewInit(): void {
         this.dataSource.sort = this.sort;
         this.sort?.sort({
             id: 'type',
             disableClear: true,
             start: 'asc'
         });
+    }
+
+    applyFilter(event: Event): void {
+        const filterValue = (event.target as HTMLInputElement)?.value;
+        this.dataSource.filter = filterValue.trim().toLowerCase();
     }
 }
