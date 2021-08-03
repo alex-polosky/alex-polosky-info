@@ -1,8 +1,16 @@
 <app-header [pageLinks]="pageLinks" [singleColumn]="singleColumn"></app-header>
-<div #pageLink_whoami class="app-section placeholder"><div class="fill-red"></div></div>
-<div #pageLink_projects class="app-section placeholder"><div class="fill-green"></div></div>
-<div #pageLink_skills class="app-section placeholder">
+<div #pageLink_whoami class="app-section">
+    <app-blurb [singleColumn]="singleColumn"></app-blurb>
+</div>
+<div #pageLink_projects class="app-section">
+    <app-portfolio [singleColumn]="singleColumn"></app-portfolio>
+</div>
+<div #pageLink_skills class="app-section">
     <app-skills [singleColumn]="singleColumn"></app-skills>
 </div>
-<div #pageLink_ideas class="app-section placeholder"><div class="fill-red"></div></div>
-<div class="app-footer placeholder"><div class="fill-green">Footer?</div></div>
+<div #pageLink_ideas class="app-section">
+    <app-ideas [singleColumn]="singleColumn"></app-ideas>
+</div>
+<div class="app-footer placeholder">
+    <app-footer [singleColumn]="singleColumn"></app-footer>
+</div>

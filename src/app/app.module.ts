@@ -1,5 +1,9 @@
+import { AppBlurbComponent } from './components/blurb/blurb';
 import { AppComponent } from './app.component';
+import { AppFooterComponent } from './components/footer/footer';
 import { AppHeaderComponent } from './components/header/header';
+import { AppIdeasComponent } from './components/ideas/ideas';
+import { AppPortfolioComponent } from './components/portfolio/portfolio';
 import { AppRoutingModule } from './app-routing.module';
 import { AppSkillsComponent } from './components/skills/skills';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,8 +21,12 @@ import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
+    AppBlurbComponent,
     AppComponent,
+    AppFooterComponent,
     AppHeaderComponent,
+    AppIdeasComponent,
+    AppPortfolioComponent,
     AppSkillsComponent
   ],
   imports: [
