@@ -66,17 +66,22 @@ export class AppHeaderComponent {
                 pages: [
                     {
                         link: 'https://github.com/alex-polosky',
-                        title: 'github',
+                        title: 'Github Account',
                         icon: 'github'
                     },
                     {
                         link: 'https://stackoverflow.com/users/568530',
-                        title: 'stackoverflow',
+                        title: 'StackOverflow Account',
                         icon: 'stackoverflow'
                     },
                     {
+                        link: 'https://www.linkedin.com/in/alex-polosky/',
+                        title: 'LinkedIn Profile',
+                        icon: 'linkedin'
+                    },
+                    {
                         link: 'https://www.youtube.com/channel/UCpgqwkRck1EIlyzXxXY-19w',
-                        title: 'youtube',
+                        title: 'Youtube Channel',
                         icon: 'youtube'
                     }
                 ]
@@ -128,6 +133,10 @@ export class AppHeaderComponent {
         this.matIconRegistry.addSvgIcon(
             'youtube',
             domSanitizer.bypassSecurityTrustResourceUrl('../assets/yt.svg')
+        );
+        this.matIconRegistry.addSvgIcon(
+            'linkedin',
+            domSanitizer.bypassSecurityTrustResourceUrl('../assets/linkedin.svg')
         );
 
         // TODO: Remove after debugging
