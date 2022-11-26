@@ -51,3 +51,18 @@ table {
     line-height: 3em;
     height: 3em;
 }
+
+div.text-spinner {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+    .mat-progress-bar {
+    }
+    span {
+        display: block;
+        position: relative;
+        left: -19px;
+        color: black;
+    }
+}
