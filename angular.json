@@ -109,5 +109,8 @@
       }
     }
   },
-  "defaultProject": "alex-polosky-info"
+  "defaultProject": "alex-polosky-info",
+  "cli": {
+    "analytics": false
+  }
 }

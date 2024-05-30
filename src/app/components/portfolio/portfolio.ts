@@ -1,5 +1,9 @@
 import { Component, Input } from '@angular/core';
 
+// const DATA = [
+//     { name: 'Trust.med', 'title': }
+// ]
+
 @Component({
     selector: 'app-portfolio',
     templateUrl: './portfolio.html',

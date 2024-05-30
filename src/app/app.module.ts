@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppSkillsComponent } from './components/skills/skills';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -21,33 +21,26 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 
-@NgModule({
-  declarations: [
-    AppBlurbComponent,
-    AppComponent,
-    AppFooterComponent,
-    AppHeaderComponent,
-    AppIdeasComponent,
-    AppPortfolioComponent,
-    AppSkillsComponent
-  ],
-  imports: [
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    BrowserModule,
-    HttpClientModule,
-    LayoutModule,
-    MatCardModule,
-    MatGridListModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    MatProgressSpinnerModule,
-    MatSortModule,
-    MatTableModule,
-    MatToolbarModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppBlurbComponent,
+        AppComponent,
+        AppFooterComponent,
+        AppHeaderComponent,
+        AppIdeasComponent,
+        AppPortfolioComponent,
+        AppSkillsComponent
+    ],
+    bootstrap: [AppComponent], imports: [AppRoutingModule,
+        BrowserAnimationsModule,
+        BrowserModule,
+        LayoutModule,
+        MatCardModule,
+        MatGridListModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        MatProgressSpinnerModule,
+        MatSortModule,
+        MatTableModule,
+        MatToolbarModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
