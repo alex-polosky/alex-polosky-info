@@ -1,6 +1,6 @@
 <div [class]="['app-container', 'mat-elevation-z8', singleColumn ? 'single-column' : 'multiple-column']">
     <div class="table-filter">
-        <mat-form-field appearance="standard">
+        <mat-form-field>
             <mat-label>Filter</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Filter..." #input />
         </mat-form-field>
