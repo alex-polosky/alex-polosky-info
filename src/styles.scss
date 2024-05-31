@@ -5,3 +5,16 @@ html, body {
 body {
     margin: 0;
 }
+
+.app-container {
+    margin: 0 auto;
+    // height: 10em;
+}
+
+.app-container.single-column {
+    width: 85%;
+}
+
+.app-container.multiple-column {
+    width: 70%;
+}

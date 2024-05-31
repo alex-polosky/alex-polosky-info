@@ -20,8 +20,10 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
+import { MatCarouselModule } from 'ng-mat-carousel-plus';
 
-@NgModule({ declarations: [
+@NgModule({
+    declarations: [
         AppBlurbComponent,
         AppComponent,
         AppFooterComponent,
@@ -30,11 +32,14 @@ import { NgModule } from '@angular/core';
         AppPortfolioComponent,
         AppSkillsComponent
     ],
-    bootstrap: [AppComponent], imports: [AppRoutingModule,
+    bootstrap: [AppComponent],
+    imports: [
+        AppRoutingModule,
         BrowserAnimationsModule,
         BrowserModule,
         LayoutModule,
         MatCardModule,
+        MatCarouselModule,
         MatGridListModule,
         MatFormFieldModule,
         MatIconModule,
@@ -42,5 +47,8 @@ import { NgModule } from '@angular/core';
         MatProgressSpinnerModule,
         MatSortModule,
         MatTableModule,
-        MatToolbarModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        MatToolbarModule
+    ],
+    providers: [provideHttpClient(withInterceptorsFromDi())]
+})
 export class AppModule { }

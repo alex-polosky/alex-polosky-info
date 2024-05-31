@@ -3,7 +3,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "paths": {
+      "@angular/*":[ "./node_modules/@angular/*" ],
+      "ng-mat-carousel-plus/":["../ng-mat-carousel/dist/carousel/"]
+    }
   },
   "files": [
     "src/main.ts",
