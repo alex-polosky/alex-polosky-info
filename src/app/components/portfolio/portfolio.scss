@@ -1,8 +1,43 @@
-mat-card-content div.preserve-whitespace {
-    white-space: pre-wrap;
+div.app-container {
+    display: flex;
+    // height: 100%;
 }
 
-mat-card {
-    width: 80%;
-    height: 20em;
+div.app-container.multiple-column {
+    flex-direction: row;
+    mat-card {
+        width: 30%;
+        height: 18em;
+        margin: 2em auto;
+    }
 }
+
+div.app-container.single-column {
+    flex-direction: column;
+    mat-card {
+        width: 90%;
+        height: 18em;
+        margin: 2em auto;
+    }
+}
+
+mat-card-content {
+    height: 100%;
+}
+
+mat-card-actions button {
+    margin: auto;
+}
+
+// mat-card.active {//:hover {
+//     // transition: transform 0.2s ease;
+//     // transform: scale(2);
+//     transition:
+//         margin 0.2s ease,
+//         height 0.2s ease,
+//         width 0.2s ease;
+//     margin: -10em;
+//     height: 50em;
+//     width: 275%;
+//     z-index: 999;
+// }

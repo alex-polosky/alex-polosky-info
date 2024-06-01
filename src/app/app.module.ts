@@ -21,6 +21,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 import { MatCarouselModule } from 'ng-mat-carousel-plus';
+import { MatButtonModule } from '@angular/material/button';
+import { PortModalComponent } from './components/portfolio/portfolio';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
     declarations: [
@@ -30,22 +34,27 @@ import { MatCarouselModule } from 'ng-mat-carousel-plus';
         AppHeaderComponent,
         AppIdeasComponent,
         AppPortfolioComponent,
-        AppSkillsComponent
+        AppSkillsComponent,
+        PortModalComponent
     ],
     bootstrap: [AppComponent],
     imports: [
         AppRoutingModule,
         BrowserAnimationsModule,
         BrowserModule,
+        // DialogModule,
         LayoutModule,
+        MatButtonModule,
         MatCardModule,
         MatCarouselModule,
+        MatDialogModule,
         MatGridListModule,
         MatFormFieldModule,
         MatIconModule,
         MatInputModule,
         MatProgressSpinnerModule,
         MatSortModule,
+        MatStepperModule,
         MatTableModule,
         MatToolbarModule
     ],
