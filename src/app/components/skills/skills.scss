@@ -1,19 +1,10 @@
 .app-container {
-    margin: 0 auto;
     height: 50em;
 }
 
 .table-container {
     height: 37em;
     overflow-y: scroll;
-}
-
-.app-container.single-column {
-    width: 85%;
-}
-
-.app-container.multiple-column {
-    width: 70%;
 }
 
 .table-filter {
