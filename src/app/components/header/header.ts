@@ -3,6 +3,7 @@ import { Component, ElementRef, Input, TemplateRef, ViewChild } from '@angular/c
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { PageLink } from 'src/app/app.component';
+import { Location } from '@angular/common';
 
 export interface TemplateLink {
     link: ElementRef | string | null;
@@ -116,27 +117,29 @@ export class AppHeaderComponent {
 
     constructor(
         private matIconRegistry: MatIconRegistry,
-        domSanitizer: DomSanitizer
+        domSanitizer: DomSanitizer,
+        location: Location
     ) {
+        let base = location.path();
         this.matIconRegistry.addSvgIcon(
             'ajp',
-            domSanitizer.bypassSecurityTrustResourceUrl('assets/ajp.svg')
+            domSanitizer.bypassSecurityTrustResourceUrl(base + '/assets/ajp.svg')
         );
         this.matIconRegistry.addSvgIcon(
             'github',
-            domSanitizer.bypassSecurityTrustResourceUrl('assets/github-mark.svg')
+            domSanitizer.bypassSecurityTrustResourceUrl(base + '/assets/github-mark.svg')
         );
         this.matIconRegistry.addSvgIcon(
             'stackoverflow',
-            domSanitizer.bypassSecurityTrustResourceUrl('assets/stackoverflow.svg')
+            domSanitizer.bypassSecurityTrustResourceUrl(base + '/assets/stackoverflow.svg')
         );
         this.matIconRegistry.addSvgIcon(
             'youtube',
-            domSanitizer.bypassSecurityTrustResourceUrl('assets/yt.svg')
+            domSanitizer.bypassSecurityTrustResourceUrl(base + '/assets/yt.svg')
         );
         this.matIconRegistry.addSvgIcon(
             'linkedin',
-            domSanitizer.bypassSecurityTrustResourceUrl('assets/linkedin.svg')
+            domSanitizer.bypassSecurityTrustResourceUrl(base + '/assets/linkedin.svg')
         );
 
         // TODO: Remove after debugging
