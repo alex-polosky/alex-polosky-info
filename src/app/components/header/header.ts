@@ -120,23 +120,23 @@ export class AppHeaderComponent {
     ) {
         this.matIconRegistry.addSvgIcon(
             'ajp',
-            domSanitizer.bypassSecurityTrustResourceUrl('../assets/ajp.svg')
+            domSanitizer.bypassSecurityTrustResourceUrl('assets/ajp.svg')
         );
         this.matIconRegistry.addSvgIcon(
             'github',
-            domSanitizer.bypassSecurityTrustResourceUrl('../assets/github-mark.svg')
+            domSanitizer.bypassSecurityTrustResourceUrl('assets/github-mark.svg')
         );
         this.matIconRegistry.addSvgIcon(
             'stackoverflow',
-            domSanitizer.bypassSecurityTrustResourceUrl('../assets/stackoverflow.svg')
+            domSanitizer.bypassSecurityTrustResourceUrl('assets/stackoverflow.svg')
         );
         this.matIconRegistry.addSvgIcon(
             'youtube',
-            domSanitizer.bypassSecurityTrustResourceUrl('../assets/yt.svg')
+            domSanitizer.bypassSecurityTrustResourceUrl('assets/yt.svg')
         );
         this.matIconRegistry.addSvgIcon(
             'linkedin',
-            domSanitizer.bypassSecurityTrustResourceUrl('../assets/linkedin.svg')
+            domSanitizer.bypassSecurityTrustResourceUrl('assets/linkedin.svg')
         );
 
         // TODO: Remove after debugging
